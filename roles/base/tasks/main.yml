@@ -1,0 +1,8 @@
+---
+- name: Refresh pacman mirrors
+  pacman: update_cache=yes
+
+- include: user.yml
+- include: shell.yml
+- include: packages.yml
+- include: fonts.yml

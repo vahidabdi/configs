@@ -1,0 +1,10 @@
+---
+- name: Install Firefox
+  pacman:
+    name: firefox
+    state: present
+
+- name: Install Opera
+  pacman:
+    name: opera
+    state: present

@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  become: yes
+  roles:
+    - { role: base, tags: ['base'] }
+    - { role: x, tags: ['X'] }
+    - { role: lightdm, tags: ['lightdm'], when: "display_mamger == 'lightdm'" }
+    - { role: xmonad, tags: ['xmonad'], when: "window_manager == 'xmonad'" }
+    - { role: editors, tags: ['editors'] }
+    - { role: browsers, tags: ['browsers'] }
+    - { role: ssh, tags: ['ssh'] }
+    - { role: git, tags: ['git'] }
+  vars_prompt:
+    - name: user_password
+      prompt: "Enter user password"

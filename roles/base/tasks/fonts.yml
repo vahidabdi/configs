@@ -1,0 +1,8 @@
+---
+- name: Install fonts
+  pacman:
+    name:
+      - otf-fira-code
+    state: present
+  tags:
+    - fonts

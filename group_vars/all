@@ -1,0 +1,45 @@
+sudo:
+  group: sudo
+
+aurman:
+  name: aurman
+  home: /var/lib/aurman
+
+user:
+  name: vanda
+  uid: 1000
+  group: vanda
+  shell: /usr/bin/fish
+  home: /home/vanda
+
+git:
+  config:
+    name: Vahid Abdi
+    email: vahidabdinet@gmail.com
+
+editors:
+  - neovim
+  - emacs
+
+video_drivers:
+  - nvidia-390xx
+
+base_packages:
+  - base
+  - base-devel
+  - lsof
+  - strace
+  - tmux
+  - git
+  - wget
+  - curl
+  - networkmanager
+  - network-manager-applet
+  - alsa-utils
+  - mlocate
+  - stow
+  - feh
+  - slock
+
+display_mamger: lightdm
+window_manager: xmonad

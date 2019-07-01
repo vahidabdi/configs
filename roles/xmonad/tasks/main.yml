@@ -1,0 +1,11 @@
+---
+- name: Install Xmonad
+  pacman:
+    name:
+      - xmonad
+      - xmonad-contrib
+      - xmonad-utils
+    state: present
+
+- include: rofi.yml
+- include: polybar.yml

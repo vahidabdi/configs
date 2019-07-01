@@ -1,0 +1,35 @@
+---
+- name: Create sudo group
+  group:
+    name: "{{ sudo.group }}"
+    state: present
+  tags:
+    - user
+
+- name: New user for AUR management
+  user:
+    name: "{{ aurman.name }}"
+    comment: "AUR manager"
+    shell: /bin/nologin
+    home: "{{ aurman.home }}"
+    system: yes
+
+- name: Create user group
+  group:
+    name: "{{ user.group }}"
+    state: present
+  tags:
+    - user
+
+- name: Create user and assign to group
+  user:
+    name: "{{ user.name }}"
+    group: "{{ user.group }}"
+    groups:
+      - "{{ sudo.group }}"
+    password: "{{ user_password|password_hash('sha512') }}"
+    shell: "{{ user.shell }}"
+    update_password: on_create
+    uid: "{{ user.uid }}"
+  tags:
+    - user

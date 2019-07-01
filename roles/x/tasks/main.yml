@@ -1,0 +1,14 @@
+---
+- name: Install Xorg
+  pacman:
+    name:
+      - xorg-server
+      - xorg-apps
+      - xorg-xinit
+      - xterm
+    state: present
+
+- name: Install video driver(s)
+  pacman:
+    name: "{{ video_drivers }}"
+    state: present

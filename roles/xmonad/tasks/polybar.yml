@@ -1,0 +1,9 @@
+---
+- name: Install Polybar
+  aur:
+    name:
+      - polybar
+    user: "{{ user.name }}"
+  tags:
+    - aur
+

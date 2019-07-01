@@ -1,0 +1,5 @@
+---
+- name: Config Git
+  template:
+    src: gitconfig.j2
+    dest: "{{ user.home }}/.gitconfig"
